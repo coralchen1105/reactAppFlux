@@ -1,0 +1,30 @@
+{
+  "name": "reactappflux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "browserify": "^16.1.1",
+    "eslint": "^4.18.2",
+    "flux": "^3.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-eslint": "^4.0.2",
+    "gulp-open": "^3.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.1",
+    "react": "^16.2.0",
+    "react-router": "^4.2.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}
