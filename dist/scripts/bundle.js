@@ -12293,8 +12293,10 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 },{}],13:[function(require,module,exports){
+"use strict";
+
 var React = require("react");
-var Home = React.createReactClass({
+var Home = React.createClass({displayName: "Home",
   render: function() {
     return (
       React.createElement("div", {className: "jumbotron"}, 
@@ -12313,5 +12315,5 @@ $ = jQuery = require("jquery");
 var React = require("react");
 var Home = require("./components/homePage");
 
-React.render(Home, document.getElementById("app"));
+React.render(React.createElement(Home, null), document.getElementById("app"));
 },{"./components/homePage":13,"jquery":5,"react":11}]},{},[14]);

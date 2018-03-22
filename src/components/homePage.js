@@ -1,5 +1,7 @@
+"use strict";
+
 var React = require("react");
-var Home = React.createReactClass({
+var Home = React.createClass({
   render: function() {
     return (
       <div className="jumbotron">
