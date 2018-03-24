@@ -1,12 +1,15 @@
 "use strict";
 
 var React = require("react");
-var Home = React.createClass({
+var createReactClass = require("create-react-class");
+var Link = require("react-router-dom").Link;
+
+var Home = createReactClass({
   render: function() {
     return (
       <div className="jumbotron">
-        <h1>Pluralsight admin</h1>
-        <p>react react and flux</p>
+        <h1>Pluralsight Administration</h1>
+        <p>React, React Router, and Flux for ultra-responsive web apps.</p>
       </div>
     );
   }

@@ -4,7 +4,7 @@ var gulp = require("gulp");
 var connect = require("gulp-connect"); // runs a local dev server
 var open = require("gulp-open"); // open a URL in a web browser
 var browserify = require("browserify"); // bundles js
-var reactify = require("reactify"); // transforms react JSX to JS
+// var reactify = require("reactify"); // transforms react JSX to JS
 var source = require("vinyl-source-stream"); // Use conventional text streams with Gulp
 var concat = require("gulp-concat"); // concatenates files
 var lint = require("gulp-eslint");
@@ -17,7 +17,8 @@ var config = {
     dist: "./dist",
     js: "./src/**/*.js",
     css: "node_modules/bootstrap/dist/css/bootstrap.min.css",
-    mainJs: "./src/main.js"
+    mainJs: "./src/main.js",
+    images: "./src/images/*"
   }
 };
 
@@ -51,9 +52,21 @@ gulp.task("css", function() {
     .pipe(gulp.dest(config.paths.dist + "/css"));
 });
 
+// Migrates images to dist folder
+// Note that I could even optimize my images here
+gulp.task("images", function() {
+  gulp
+    .src(config.paths.images)
+    .pipe(gulp.dest(config.paths.dist + "/images"))
+    .pipe(connect.reload());
+
+  //publish favicon
+  gulp.src("./src/favicon.ico").pipe(gulp.dest(config.paths.dist));
+});
+
 gulp.task("js", function() {
   browserify(config.paths.mainJs)
-    .transform(reactify)
+    .transform("babelify", { presets: ["react"] })
     .bundle()
     .on("error", console.error.bind(console))
     .pipe(source("bundle.js"))
@@ -67,7 +80,7 @@ gulp.task("js", function() {
 gulp.task("lint", function() {
   return gulp
     .src(config.paths.js)
-    .pipe(lint({ config: "eslint.config.json" }))
+    .pipe(lint({ config: ".eslintrc" }))
     .pipe(lint.format());
 });
-gulp.task("default", ["html", "open", "js", "lint", "css"]);
+gulp.task("default", ["html", "open", "js", "lint", "css", "images"]);
