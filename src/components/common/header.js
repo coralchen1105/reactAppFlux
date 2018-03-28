@@ -2,25 +2,30 @@
 
 var React = require("react");
 var createReactClass = require("create-react-class");
-// var Link = require("react-router-dom").Link;
+var Link = require("react-router-dom").Link;
 
 var Header = createReactClass({
   render: function() {
     return (
       <nav className="navbar navbar-default">
         <div className="container-fluid">
-          <a href="/" className="navbar-brand">
+          {/* 
+        to: string
+        A string representation of the location to link to, created by concatenating the location's pathname, search, and hash properties.
+        Link to route tag name attritube
+        */}
+          <Link to="app" className="navbar-brand">
             <img src="images/pluralsight-logo.png" />
-          </a>
+          </Link>
           <ul className="nav navbar-nav">
             <li>
-              <a href="/">Home</a>
+              <Link to="app">Home</Link>
             </li>
             <li>
-              <a href="/#about">About</a>
+              <Link to="about">About</Link>
             </li>
             <li>
-              <a href="/#authors">Authors</a>
+              <Link to="authors">Authors</Link>
             </li>
           </ul>
         </div>
