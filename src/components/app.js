@@ -8,7 +8,7 @@ var ReactRouter = require("react-router-dom");
 // all component pages get from here
 var HomePage = require("./homePage");
 var AuthorPage = require("./authors/authorPage");
-// var ManageAuthorPage = require("./authors/manageAuthorPage");
+var ManageAuthorPage = require("./authors/manageAuthorPage");
 var AboutPage = require("./about/aboutPage");
 var NotFoundPage = require("./notFoundPage");
 
@@ -29,7 +29,7 @@ var App = createReactClass({
 
             <Route exact path="/" component={HomePage} />
             <Route path="/authors" component={AuthorPage} />
-            {/* <Route path="/author" component={ManageAuthorPage} exact /> */}
+            <Route path="/author" component={ManageAuthorPage} exact />
             {/* <Route path="/author/:id" component={ManageAuthorPage} /> */}
             <Route path="/about" component={AboutPage} />
             <Route component={NotFoundPage} />

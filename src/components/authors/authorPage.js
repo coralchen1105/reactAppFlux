@@ -4,6 +4,8 @@ var React = require("react");
 var createReactClass = require("create-react-class");
 var AuthorApi = require("../../api/authorApi");
 var AuthorList = require("./authorList");
+var Router = require("react-router");
+var Link = require("react-router-dom").Link;
 
 var AuthorPage = createReactClass({
   getInitialState: function() {
@@ -24,6 +26,9 @@ var AuthorPage = createReactClass({
       <div>
         <h1>Authors</h1>
         {/* pass authors data as props to AuthorList component */}
+        <Link to="author" className="btn btn-default">
+          Add Author
+        </Link>
         <AuthorList authors={this.state.authors} />
       </div>
     );

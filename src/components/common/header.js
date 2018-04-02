@@ -14,18 +14,18 @@ var Header = createReactClass({
         A string representation of the location to link to, created by concatenating the location's pathname, search, and hash properties.
         Link to route tag name attritube
         */}
-          <Link to="app" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             <img src="images/pluralsight-logo.png" />
           </Link>
           <ul className="nav navbar-nav">
             <li>
-              <Link to="app">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="about">About</Link>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="authors">Authors</Link>
+              <Link to="/authors">Authors</Link>
             </li>
           </ul>
         </div>
