@@ -6,7 +6,7 @@ var ReactRouter = require("react-router-dom");
 var AuthorForm = require("./authorForm");
 // var AuthorActions = require("../../actions/authorActions");
 // var AuthorStore = require("../../stores/authorStore");
-// var toastr = require("toastr");
+var toastr = require("toastr");
 
 // var Redirect = ReactRouter.Redirect;
 // var Prompt = ReactRouter.Prompt;
@@ -33,8 +33,12 @@ var ManageAuthorPage = createReactClass({
     return (
       //   need one top level tag
       <div>
-        <h1>Manage Author</h1>
-        <AuthorForm author={this.state.author} onChange={this.setAuthorState} />
+        <AuthorForm
+          author={this.state.author}
+          onChange={this.setAuthorState}
+          onSave={this.saveAuthor}
+          errors={this.state.errors}
+        />
       </div>
     );
   }

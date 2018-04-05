@@ -1730,7 +1730,7 @@ var createLocation = exports.createLocation = function createLocation(path, stat
 var locationsAreEqual = exports.locationsAreEqual = function locationsAreEqual(a, b) {
   return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && (0, _valueEqual2.default)(a.state, b.state);
 };
-},{"./PathUtils":21,"resolve-pathname":72,"value-equal":73}],21:[function(require,module,exports){
+},{"./PathUtils":21,"resolve-pathname":72,"value-equal":74}],21:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -2100,7 +2100,7 @@ var createBrowserHistory = function createBrowserHistory() {
 };
 
 exports.default = createBrowserHistory;
-},{"./DOMUtils":19,"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"invariant":28,"warning":74}],23:[function(require,module,exports){
+},{"./DOMUtils":19,"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"invariant":28,"warning":75}],23:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -2425,7 +2425,7 @@ var createHashHistory = function createHashHistory() {
 };
 
 exports.default = createHashHistory;
-},{"./DOMUtils":19,"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"invariant":28,"warning":74}],24:[function(require,module,exports){
+},{"./DOMUtils":19,"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"invariant":28,"warning":75}],24:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -2596,7 +2596,7 @@ var createMemoryHistory = function createMemoryHistory() {
 };
 
 exports.default = createMemoryHistory;
-},{"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"warning":74}],25:[function(require,module,exports){
+},{"./LocationUtils":20,"./PathUtils":21,"./createTransitionManager":25,"warning":75}],25:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -2682,7 +2682,7 @@ var createTransitionManager = function createTransitionManager() {
 };
 
 exports.default = createTransitionManager;
-},{"warning":74}],26:[function(require,module,exports){
+},{"warning":75}],26:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -47374,7 +47374,7 @@ BrowserRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = BrowserRouter;
-},{"./Router":52,"history/createBrowserHistory":22,"prop-types":38,"react":70,"warning":74}],45:[function(require,module,exports){
+},{"./Router":52,"history/createBrowserHistory":22,"prop-types":38,"react":70,"warning":75}],45:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -47443,7 +47443,7 @@ HashRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = HashRouter;
-},{"./Router":52,"history/createHashHistory":23,"prop-types":38,"react":70,"warning":74}],46:[function(require,module,exports){
+},{"./Router":52,"history/createHashHistory":23,"prop-types":38,"react":70,"warning":75}],46:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -47892,7 +47892,7 @@ MemoryRouter.propTypes = {
   children: _propTypes2.default.node
 };
 exports.default = MemoryRouter;
-},{"./Router":62,"history/createMemoryHistory":24,"prop-types":38,"react":70,"warning":74}],59:[function(require,module,exports){
+},{"./Router":62,"history/createMemoryHistory":24,"prop-types":38,"react":70,"warning":75}],59:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -48092,7 +48092,7 @@ Redirect.contextTypes = {
   }).isRequired
 };
 exports.default = Redirect;
-},{"history":26,"invariant":28,"prop-types":38,"react":70,"warning":74}],61:[function(require,module,exports){
+},{"history":26,"invariant":28,"prop-types":38,"react":70,"warning":75}],61:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -48245,7 +48245,7 @@ Route.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Route;
-},{"./matchPath":66,"invariant":28,"prop-types":38,"react":70,"warning":74}],62:[function(require,module,exports){
+},{"./matchPath":66,"invariant":28,"prop-types":38,"react":70,"warning":75}],62:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -48365,7 +48365,7 @@ Router.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = Router;
-},{"invariant":28,"prop-types":38,"react":70,"warning":74}],63:[function(require,module,exports){
+},{"invariant":28,"prop-types":38,"react":70,"warning":75}],63:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -48551,7 +48551,7 @@ StaticRouter.childContextTypes = {
   router: _propTypes2.default.object.isRequired
 };
 exports.default = StaticRouter;
-},{"./Router":62,"history/PathUtils":21,"invariant":28,"prop-types":38,"react":70,"warning":74}],64:[function(require,module,exports){
+},{"./Router":62,"history/PathUtils":21,"invariant":28,"prop-types":38,"react":70,"warning":75}],64:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -48648,7 +48648,7 @@ Switch.propTypes = {
   location: _propTypes2.default.object
 };
 exports.default = Switch;
-},{"./matchPath":66,"invariant":28,"prop-types":38,"react":70,"warning":74}],65:[function(require,module,exports){
+},{"./matchPath":66,"invariant":28,"prop-types":38,"react":70,"warning":75}],65:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50302,6 +50302,484 @@ function resolvePathname(to) {
 exports.default = resolvePathname;
 module.exports = exports['default'];
 },{}],73:[function(require,module,exports){
+/*
+ * Toastr
+ * Copyright 2012-2015
+ * Authors: John Papa, Hans Fjällemark, and Tim Ferrell.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * ARIA Support: Greta Krafsig
+ *
+ * Project: https://github.com/CodeSeven/toastr
+ */
+/* global define */
+(function (define) {
+    define(['jquery'], function ($) {
+        return (function () {
+            var $container;
+            var listener;
+            var toastId = 0;
+            var toastType = {
+                error: 'error',
+                info: 'info',
+                success: 'success',
+                warning: 'warning'
+            };
+
+            var toastr = {
+                clear: clear,
+                remove: remove,
+                error: error,
+                getContainer: getContainer,
+                info: info,
+                options: {},
+                subscribe: subscribe,
+                success: success,
+                version: '2.1.4',
+                warning: warning
+            };
+
+            var previousToast;
+
+            return toastr;
+
+            ////////////////
+
+            function error(message, title, optionsOverride) {
+                return notify({
+                    type: toastType.error,
+                    iconClass: getOptions().iconClasses.error,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
+
+            function getContainer(options, create) {
+                if (!options) { options = getOptions(); }
+                $container = $('#' + options.containerId);
+                if ($container.length) {
+                    return $container;
+                }
+                if (create) {
+                    $container = createContainer(options);
+                }
+                return $container;
+            }
+
+            function info(message, title, optionsOverride) {
+                return notify({
+                    type: toastType.info,
+                    iconClass: getOptions().iconClasses.info,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
+
+            function subscribe(callback) {
+                listener = callback;
+            }
+
+            function success(message, title, optionsOverride) {
+                return notify({
+                    type: toastType.success,
+                    iconClass: getOptions().iconClasses.success,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
+
+            function warning(message, title, optionsOverride) {
+                return notify({
+                    type: toastType.warning,
+                    iconClass: getOptions().iconClasses.warning,
+                    message: message,
+                    optionsOverride: optionsOverride,
+                    title: title
+                });
+            }
+
+            function clear($toastElement, clearOptions) {
+                var options = getOptions();
+                if (!$container) { getContainer(options); }
+                if (!clearToast($toastElement, options, clearOptions)) {
+                    clearContainer(options);
+                }
+            }
+
+            function remove($toastElement) {
+                var options = getOptions();
+                if (!$container) { getContainer(options); }
+                if ($toastElement && $(':focus', $toastElement).length === 0) {
+                    removeToast($toastElement);
+                    return;
+                }
+                if ($container.children().length) {
+                    $container.remove();
+                }
+            }
+
+            // internal functions
+
+            function clearContainer (options) {
+                var toastsToClear = $container.children();
+                for (var i = toastsToClear.length - 1; i >= 0; i--) {
+                    clearToast($(toastsToClear[i]), options);
+                }
+            }
+
+            function clearToast ($toastElement, options, clearOptions) {
+                var force = clearOptions && clearOptions.force ? clearOptions.force : false;
+                if ($toastElement && (force || $(':focus', $toastElement).length === 0)) {
+                    $toastElement[options.hideMethod]({
+                        duration: options.hideDuration,
+                        easing: options.hideEasing,
+                        complete: function () { removeToast($toastElement); }
+                    });
+                    return true;
+                }
+                return false;
+            }
+
+            function createContainer(options) {
+                $container = $('<div/>')
+                    .attr('id', options.containerId)
+                    .addClass(options.positionClass);
+
+                $container.appendTo($(options.target));
+                return $container;
+            }
+
+            function getDefaults() {
+                return {
+                    tapToDismiss: true,
+                    toastClass: 'toast',
+                    containerId: 'toast-container',
+                    debug: false,
+
+                    showMethod: 'fadeIn', //fadeIn, slideDown, and show are built into jQuery
+                    showDuration: 300,
+                    showEasing: 'swing', //swing and linear are built into jQuery
+                    onShown: undefined,
+                    hideMethod: 'fadeOut',
+                    hideDuration: 1000,
+                    hideEasing: 'swing',
+                    onHidden: undefined,
+                    closeMethod: false,
+                    closeDuration: false,
+                    closeEasing: false,
+                    closeOnHover: true,
+
+                    extendedTimeOut: 1000,
+                    iconClasses: {
+                        error: 'toast-error',
+                        info: 'toast-info',
+                        success: 'toast-success',
+                        warning: 'toast-warning'
+                    },
+                    iconClass: 'toast-info',
+                    positionClass: 'toast-top-right',
+                    timeOut: 5000, // Set timeOut and extendedTimeOut to 0 to make it sticky
+                    titleClass: 'toast-title',
+                    messageClass: 'toast-message',
+                    escapeHtml: false,
+                    target: 'body',
+                    closeHtml: '<button type="button">&times;</button>',
+                    closeClass: 'toast-close-button',
+                    newestOnTop: true,
+                    preventDuplicates: false,
+                    progressBar: false,
+                    progressClass: 'toast-progress',
+                    rtl: false
+                };
+            }
+
+            function publish(args) {
+                if (!listener) { return; }
+                listener(args);
+            }
+
+            function notify(map) {
+                var options = getOptions();
+                var iconClass = map.iconClass || options.iconClass;
+
+                if (typeof (map.optionsOverride) !== 'undefined') {
+                    options = $.extend(options, map.optionsOverride);
+                    iconClass = map.optionsOverride.iconClass || iconClass;
+                }
+
+                if (shouldExit(options, map)) { return; }
+
+                toastId++;
+
+                $container = getContainer(options, true);
+
+                var intervalId = null;
+                var $toastElement = $('<div/>');
+                var $titleElement = $('<div/>');
+                var $messageElement = $('<div/>');
+                var $progressElement = $('<div/>');
+                var $closeElement = $(options.closeHtml);
+                var progressBar = {
+                    intervalId: null,
+                    hideEta: null,
+                    maxHideTime: null
+                };
+                var response = {
+                    toastId: toastId,
+                    state: 'visible',
+                    startTime: new Date(),
+                    options: options,
+                    map: map
+                };
+
+                personalizeToast();
+
+                displayToast();
+
+                handleEvents();
+
+                publish(response);
+
+                if (options.debug && console) {
+                    console.log(response);
+                }
+
+                return $toastElement;
+
+                function escapeHtml(source) {
+                    if (source == null) {
+                        source = '';
+                    }
+
+                    return source
+                        .replace(/&/g, '&amp;')
+                        .replace(/"/g, '&quot;')
+                        .replace(/'/g, '&#39;')
+                        .replace(/</g, '&lt;')
+                        .replace(/>/g, '&gt;');
+                }
+
+                function personalizeToast() {
+                    setIcon();
+                    setTitle();
+                    setMessage();
+                    setCloseButton();
+                    setProgressBar();
+                    setRTL();
+                    setSequence();
+                    setAria();
+                }
+
+                function setAria() {
+                    var ariaValue = '';
+                    switch (map.iconClass) {
+                        case 'toast-success':
+                        case 'toast-info':
+                            ariaValue =  'polite';
+                            break;
+                        default:
+                            ariaValue = 'assertive';
+                    }
+                    $toastElement.attr('aria-live', ariaValue);
+                }
+
+                function handleEvents() {
+                    if (options.closeOnHover) {
+                        $toastElement.hover(stickAround, delayedHideToast);
+                    }
+
+                    if (!options.onclick && options.tapToDismiss) {
+                        $toastElement.click(hideToast);
+                    }
+
+                    if (options.closeButton && $closeElement) {
+                        $closeElement.click(function (event) {
+                            if (event.stopPropagation) {
+                                event.stopPropagation();
+                            } else if (event.cancelBubble !== undefined && event.cancelBubble !== true) {
+                                event.cancelBubble = true;
+                            }
+
+                            if (options.onCloseClick) {
+                                options.onCloseClick(event);
+                            }
+
+                            hideToast(true);
+                        });
+                    }
+
+                    if (options.onclick) {
+                        $toastElement.click(function (event) {
+                            options.onclick(event);
+                            hideToast();
+                        });
+                    }
+                }
+
+                function displayToast() {
+                    $toastElement.hide();
+
+                    $toastElement[options.showMethod](
+                        {duration: options.showDuration, easing: options.showEasing, complete: options.onShown}
+                    );
+
+                    if (options.timeOut > 0) {
+                        intervalId = setTimeout(hideToast, options.timeOut);
+                        progressBar.maxHideTime = parseFloat(options.timeOut);
+                        progressBar.hideEta = new Date().getTime() + progressBar.maxHideTime;
+                        if (options.progressBar) {
+                            progressBar.intervalId = setInterval(updateProgress, 10);
+                        }
+                    }
+                }
+
+                function setIcon() {
+                    if (map.iconClass) {
+                        $toastElement.addClass(options.toastClass).addClass(iconClass);
+                    }
+                }
+
+                function setSequence() {
+                    if (options.newestOnTop) {
+                        $container.prepend($toastElement);
+                    } else {
+                        $container.append($toastElement);
+                    }
+                }
+
+                function setTitle() {
+                    if (map.title) {
+                        var suffix = map.title;
+                        if (options.escapeHtml) {
+                            suffix = escapeHtml(map.title);
+                        }
+                        $titleElement.append(suffix).addClass(options.titleClass);
+                        $toastElement.append($titleElement);
+                    }
+                }
+
+                function setMessage() {
+                    if (map.message) {
+                        var suffix = map.message;
+                        if (options.escapeHtml) {
+                            suffix = escapeHtml(map.message);
+                        }
+                        $messageElement.append(suffix).addClass(options.messageClass);
+                        $toastElement.append($messageElement);
+                    }
+                }
+
+                function setCloseButton() {
+                    if (options.closeButton) {
+                        $closeElement.addClass(options.closeClass).attr('role', 'button');
+                        $toastElement.prepend($closeElement);
+                    }
+                }
+
+                function setProgressBar() {
+                    if (options.progressBar) {
+                        $progressElement.addClass(options.progressClass);
+                        $toastElement.prepend($progressElement);
+                    }
+                }
+
+                function setRTL() {
+                    if (options.rtl) {
+                        $toastElement.addClass('rtl');
+                    }
+                }
+
+                function shouldExit(options, map) {
+                    if (options.preventDuplicates) {
+                        if (map.message === previousToast) {
+                            return true;
+                        } else {
+                            previousToast = map.message;
+                        }
+                    }
+                    return false;
+                }
+
+                function hideToast(override) {
+                    var method = override && options.closeMethod !== false ? options.closeMethod : options.hideMethod;
+                    var duration = override && options.closeDuration !== false ?
+                        options.closeDuration : options.hideDuration;
+                    var easing = override && options.closeEasing !== false ? options.closeEasing : options.hideEasing;
+                    if ($(':focus', $toastElement).length && !override) {
+                        return;
+                    }
+                    clearTimeout(progressBar.intervalId);
+                    return $toastElement[method]({
+                        duration: duration,
+                        easing: easing,
+                        complete: function () {
+                            removeToast($toastElement);
+                            clearTimeout(intervalId);
+                            if (options.onHidden && response.state !== 'hidden') {
+                                options.onHidden();
+                            }
+                            response.state = 'hidden';
+                            response.endTime = new Date();
+                            publish(response);
+                        }
+                    });
+                }
+
+                function delayedHideToast() {
+                    if (options.timeOut > 0 || options.extendedTimeOut > 0) {
+                        intervalId = setTimeout(hideToast, options.extendedTimeOut);
+                        progressBar.maxHideTime = parseFloat(options.extendedTimeOut);
+                        progressBar.hideEta = new Date().getTime() + progressBar.maxHideTime;
+                    }
+                }
+
+                function stickAround() {
+                    clearTimeout(intervalId);
+                    progressBar.hideEta = 0;
+                    $toastElement.stop(true, true)[options.showMethod](
+                        {duration: options.showDuration, easing: options.showEasing}
+                    );
+                }
+
+                function updateProgress() {
+                    var percentage = ((progressBar.hideEta - (new Date().getTime())) / progressBar.maxHideTime) * 100;
+                    $progressElement.width(percentage + '%');
+                }
+            }
+
+            function getOptions() {
+                return $.extend({}, getDefaults(), toastr.options);
+            }
+
+            function removeToast($toastElement) {
+                if (!$container) { $container = getContainer(); }
+                if ($toastElement.is(':visible')) {
+                    return;
+                }
+                $toastElement.remove();
+                $toastElement = null;
+                if ($container.children().length === 0) {
+                    $container.remove();
+                    previousToast = undefined;
+                }
+            }
+
+        })();
+    });
+}(typeof define === 'function' && define.amd ? define : function (deps, factory) {
+    if (typeof module !== 'undefined' && module.exports) { //Node
+        module.exports = factory(require('jquery'));
+    } else {
+        window.toastr = factory(window.jQuery);
+    }
+}));
+
+},{"jquery":30}],74:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -50345,7 +50823,7 @@ function valueEqual(a, b) {
 
 exports.default = valueEqual;
 module.exports = exports['default'];
-},{}],74:[function(require,module,exports){
+},{}],75:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -50409,7 +50887,7 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"_process":34}],75:[function(require,module,exports){
+},{"_process":34}],76:[function(require,module,exports){
 "use strict";
 
 //This file is mocking a web API by hitting hard coded data.
@@ -50466,7 +50944,7 @@ var AuthorApi = {
 
 module.exports = AuthorApi;
 
-},{"./authorData":76,"lodash":31}],76:[function(require,module,exports){
+},{"./authorData":77,"lodash":31}],77:[function(require,module,exports){
 module.exports = {
   authors: [{
     id: "cory-house",
@@ -50483,7 +50961,7 @@ module.exports = {
   }]
 };
 
-},{}],77:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50554,7 +51032,7 @@ var About = createReactClass({
 
 module.exports = About;
 
-},{"create-react-class":2,"react":70}],78:[function(require,module,exports){
+},{"create-react-class":2,"react":70}],79:[function(require,module,exports){
 /*eslint-disable strict */ //Disabling check because we can't run strict mode. Need global vars.
 // Todo:what is RouteHandler do and how app.js link to main.js
 var React = require("react");
@@ -50602,26 +51080,60 @@ var App = createReactClass({
 
 module.exports = App;
 
-},{"./about/aboutPage":77,"./authors/authorPage":81,"./authors/manageAuthorPage":82,"./common/header":83,"./homePage":84,"./notFoundPage":85,"create-react-class":2,"jquery":30,"react":70,"react-router-dom":55}],79:[function(require,module,exports){
+},{"./about/aboutPage":78,"./authors/authorPage":82,"./authors/manageAuthorPage":83,"./common/header":84,"./homePage":86,"./notFoundPage":87,"create-react-class":2,"jquery":30,"react":70,"react-router-dom":55}],80:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
 var createReactClass = require("create-react-class");
-var ReactRouter = require("react-router-dom");
+var PropTypes = require("prop-types");
+var Input = require("../common/textInput");
 
-var ManageAuthorPage = createReactClass({
-  displayName: "ManageAuthorPage",
+var AuthorForm = createReactClass({
+  displayName: "AuthorForm",
+
+  propTypes: {
+    author: PropTypes.object.isRequired,
+    onSave: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    errors: PropTypes.object
+  },
 
   render: function () {
     return React.createElement(
-      "h1",
+      "form",
       null,
-      "author form"
+      React.createElement(
+        "h1",
+        null,
+        "Manage Author"
+      ),
+      React.createElement(Input, {
+        name: "firstName",
+        label: "First Name",
+        value: this.props.author.firstName,
+        onChange: this.props.onChange,
+        error: this.props.errors.firstName
+      }),
+      React.createElement(Input, {
+        name: "lastName",
+        label: "Last Name",
+        value: this.props.author.lastName,
+        onChange: this.props.onChange,
+        error: this.props.errors.lastName
+      }),
+      React.createElement("input", {
+        type: "submit",
+        value: "Save",
+        className: "btn btn-default",
+        onClick: this.props.onSave
+      })
     );
   }
 });
 
-},{"create-react-class":2,"react":70,"react-router-dom":55}],80:[function(require,module,exports){
+module.exports = AuthorForm;
+
+},{"../common/textInput":85,"create-react-class":2,"prop-types":38,"react":70}],81:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50692,7 +51204,7 @@ var AuthorList = createReactClass({
 
 module.exports = AuthorList;
 
-},{"create-react-class":2,"prop-types":38,"react":70}],81:[function(require,module,exports){
+},{"create-react-class":2,"prop-types":38,"react":70}],82:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50739,7 +51251,7 @@ var AuthorPage = createReactClass({
 
 module.exports = AuthorPage;
 
-},{"../../api/authorApi":75,"./authorList":80,"create-react-class":2,"react":70,"react-router":65,"react-router-dom":55}],82:[function(require,module,exports){
+},{"../../api/authorApi":76,"./authorList":81,"create-react-class":2,"react":70,"react-router":65,"react-router-dom":55}],83:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50748,7 +51260,7 @@ var ReactRouter = require("react-router-dom");
 var AuthorForm = require("./authorForm");
 // var AuthorActions = require("../../actions/authorActions");
 // var AuthorStore = require("../../stores/authorStore");
-// var toastr = require("toastr");
+var toastr = require("toastr");
 
 // var Redirect = ReactRouter.Redirect;
 // var Prompt = ReactRouter.Prompt;
@@ -50756,16 +51268,41 @@ var AuthorForm = require("./authorForm");
 var ManageAuthorPage = createReactClass({
   displayName: "ManageAuthorPage",
 
+  getInitialState: function () {
+    return {
+      author: { id: "", firstName: "", lastName: "" },
+      errors: {},
+      dirty: false,
+      redirect: false
+    };
+  },
+
+  // update state from child component
+  // called every single key press
+  setAuthorState: function (event) {
+    var author = Object.assign({}, this.state.author);
+    author[event.target.name] = event.target.value;
+    this.setState({ author: author, dirty: true });
+  },
+
   render: function () {
-    return React.createElement(
-      "div",
-      null,
+    return (
+      //   need one top level tag
       React.createElement(
-        "h1",
+        "div",
         null,
-        "Manage Author"
-      ),
-      React.createElement(AuthorForm, null)
+        React.createElement(
+          "h1",
+          null,
+          "Manage Author"
+        ),
+        React.createElement(AuthorForm, {
+          author: this.state.author,
+          onChange: this.setAuthorState,
+          onSave: this.saveAuthor,
+          errors: this.state.errors
+        })
+      )
     );
   }
 });
@@ -50774,7 +51311,7 @@ var ManageAuthorPage = createReactClass({
 // to notify the user when attempting to navigate away when the form is dirty.
 module.exports = ManageAuthorPage;
 
-},{"./authorForm":79,"create-react-class":2,"react":70,"react-router-dom":55}],83:[function(require,module,exports){
+},{"./authorForm":80,"create-react-class":2,"react":70,"react-router-dom":55,"toastr":73}],84:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50834,7 +51371,64 @@ var Header = createReactClass({
 
 module.exports = Header;
 
-},{"create-react-class":2,"react":70,"react-router-dom":55}],84:[function(require,module,exports){
+},{"create-react-class":2,"react":70,"react-router-dom":55}],85:[function(require,module,exports){
+"use strict";
+
+var React = require("react");
+var createReactClass = require("create-react-class");
+var PropTypes = require("prop-types");
+
+var Input = createReactClass({
+  displayName: "Input",
+
+  propTypes: {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string,
+    value: PropTypes.string,
+    error: PropTypes.string
+  },
+
+  render: function () {
+    var wrapperClass = "form-group";
+    if (this.props.error && this.props.error.length > 0) {
+      wrapperClass += " " + "has-error";
+    }
+
+    return React.createElement(
+      "div",
+      { className: wrapperClass },
+      React.createElement(
+        "label",
+        { htmlFor: this.props.name },
+        this.props.label
+      ),
+      React.createElement(
+        "div",
+        { className: "field" },
+        React.createElement("input", {
+          type: "text",
+          name: this.props.name,
+          className: "form-control",
+          placeholder: this.props.placeholder,
+          ref: this.props.name,
+          value: this.props.value,
+          onChange: this.props.onChange
+        }),
+        React.createElement(
+          "div",
+          { className: "input" },
+          this.props.error
+        )
+      )
+    );
+  }
+});
+
+module.exports = Input;
+
+},{"create-react-class":2,"prop-types":38,"react":70}],86:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50869,7 +51463,7 @@ var Home = createReactClass({
 
 module.exports = Home;
 
-},{"create-react-class":2,"react":70,"react-router-dom":55}],85:[function(require,module,exports){
+},{"create-react-class":2,"react":70,"react-router-dom":55}],87:[function(require,module,exports){
 "use strict";
 
 var React = require("react");
@@ -50908,7 +51502,7 @@ var NotFoundPage = createReactClass({
 
 module.exports = NotFoundPage;
 
-},{"create-react-class":2,"react":70,"react-router-dom":55}],86:[function(require,module,exports){
+},{"create-react-class":2,"react":70,"react-router-dom":55}],88:[function(require,module,exports){
 // entry point of the application
 "use strict";
 
@@ -50926,4 +51520,4 @@ ReactDom.render(React.createElement(
   React.createElement(Route, { path: "/", component: App })
 ), document.getElementById("app"));
 
-},{"./components/app":78,"react":70,"react-dom":43,"react-router-dom":55}]},{},[86]);
+},{"./components/app":79,"react":70,"react-dom":43,"react-router-dom":55}]},{},[88]);

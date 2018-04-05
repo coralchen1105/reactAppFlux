@@ -2,9 +2,17 @@
 
 var React = require("react");
 var createReactClass = require("create-react-class");
-var ReactRouter = require("react-router-dom");
+var PropTypes = require("prop-types");
+var Input = require("../common/textInput");
 
-var ManageAuthorPage = createReactClass({
+var AuthorForm = createReactClass({
+  propTypes: {
+    author: PropTypes.object.isRequired,
+    onSave: PropTypes.func.isRequired,
+    onChange: PropTypes.func.isRequired,
+    errors: PropTypes.object
+  },
+
   render: function() {
     return (
       <form>

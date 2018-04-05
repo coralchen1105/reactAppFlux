@@ -30,7 +30,7 @@ var App = createReactClass({
             <Route exact path="/" component={HomePage} />
             <Route path="/authors" component={AuthorPage} />
             <Route path="/author" component={ManageAuthorPage} exact />
-            {/* <Route path="/author/:id" component={ManageAuthorPage} /> */}
+            <Route path="/author/:id" component={ManageAuthorPage} />
             <Route path="/about" component={AboutPage} />
             <Route component={NotFoundPage} />
           </Switch>
