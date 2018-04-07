@@ -8,6 +8,9 @@ var App = require("./components/app");
 
 var Router = ReactRouter.BrowserRouter;
 var Route = ReactRouter.Route;
+var InitializeActions = require("./actions/initializeActions");
+
+InitializeActions.initApp();
 
 ReactDom.render(
   <Router>

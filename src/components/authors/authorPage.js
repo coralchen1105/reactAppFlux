@@ -2,7 +2,8 @@
 
 var React = require("react");
 var createReactClass = require("create-react-class");
-var AuthorApi = require("../../api/authorApi");
+var AuthorStore = require("../../stores/authorStore");
+var AuthorActions = require("../../actions/authorActions");
 var AuthorList = require("./authorList");
 var Router = require("react-router");
 var Link = require("react-router-dom").Link;
@@ -10,15 +11,22 @@ var Link = require("react-router-dom").Link;
 var AuthorPage = createReactClass({
   getInitialState: function() {
     return {
-      authors: []
+      authors: AuthorStore.getAllAuthors()
     };
   },
 
-  // set author array data
-  componentDidMount: function() {
-    if (this.isMounted()) {
-      this.setState({ authors: AuthorApi.getAllAuthors() });
-    }
+  // UI will change when component mount, without this code, still delet data but UI doesn't change
+  componentWillMount: function() {
+    AuthorStore.addChangeListener(this._onChange);
+  },
+
+  //Clean up when this component is unmounted
+  componentWillUnmount: function() {
+    AuthorStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function() {
+    this.setState({ authors: AuthorStore.getAllAuthors() });
   },
 
   render: function() {
