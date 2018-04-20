@@ -10,7 +10,7 @@ var AuthorActions = {
     var newAuthor = AuthorApi.saveAuthor(author);
 
     //Hey dispatcher, go tell all the stores that an author was just created.
-    // this part is the payload
+    // this part is the payload, and will trigger the authorStore.js register action
     Dispatcher.dispatch({
       actionType: ActionTypes.CREATE_AUTHOR,
       author: newAuthor

@@ -21,10 +21,11 @@ var ManageAuthorPage = createReactClass({
     };
   },
 
-  // update state from child component
-  // called every single key press
+  // update state from child component,get data from UI and set into author state
+  // called every single key press, event is "onChange" and trigger from UI
   setAuthorState: function(event) {
     var author = Object.assign({}, this.state.author);
+    // target value attribute and return the value of "name" attribute
     author[event.target.name] = event.target.value;
     this.setState({ author: author, dirty: true });
   },
@@ -54,6 +55,7 @@ var ManageAuthorPage = createReactClass({
     return formIsValid;
   },
 
+  // prepare payload using AuthorActions dispather
   saveAuthor: function(event) {
     event.preventDefault();
 
@@ -64,6 +66,7 @@ var ManageAuthorPage = createReactClass({
     if (this.state.author.id) {
       AuthorActions.updateAuthor(this.state.author);
     } else {
+      //this.state.author is new author info input from UI
       AuthorActions.createAuthor(this.state.author);
     }
 
@@ -75,8 +78,10 @@ var ManageAuthorPage = createReactClass({
     return (
       //   need one top level tag
       <div>
+        {/* add AuthorForm onChange props and pass to AuthorForm.js as props data */}
         <AuthorForm
           author={this.state.author}
+          // change event pass as parameter
           onChange={this.setAuthorState}
           onSave={this.saveAuthor}
           errors={this.state.errors}

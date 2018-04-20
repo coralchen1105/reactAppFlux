@@ -1,16 +1,19 @@
 "use strict";
-
+// get the only dispatcher object from file
 var Dispatcher = require("../dispatcher/appDispatcher");
 var ActionTypes = require("../constants/actionTypes");
-var EventEmitter = require("events").EventEmitter;
+// broadcast events from our stores so that react compoonents are notified when stores change
 var assign = require("object-assign");
 // private variable
 var _authors = [];
+// package that work with array, number, objects, strings (iteratiing arrays)
+var _ = require("lodash");
 
 var CHANGE_EVENT = "change";
 
 // {}: take empty new object
 // EventEmitter.prototype: use as class
+// group our author store and the eventEmitter prototype
 var AuthorStore = assign({}, EventEmitter.prototype, {
   addChangeListener: function(callback) {
     // whatever callback comes in it will call when "CHANGE_EVENT" on
@@ -20,7 +23,7 @@ var AuthorStore = assign({}, EventEmitter.prototype, {
   removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   },
-  // execute event listener
+  // execute event listener, fire up the event listerner
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
@@ -34,7 +37,7 @@ var AuthorStore = assign({}, EventEmitter.prototype, {
   }
 });
 
-// add data to dispatcher
+// add data to dispatcher, action parameter is from authorAction.js
 Dispatcher.register(function(action) {
   switch (action.actionType) {
     case ActionTypes.INITIALIZE:

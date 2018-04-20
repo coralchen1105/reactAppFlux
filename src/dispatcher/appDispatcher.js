@@ -10,7 +10,8 @@
  *
  * A singleton that operates as the central hub for application updates.
  */
-// every application has one dispatcher
+// every application has one dispatcher, only one dispatcher object through the app
+// When export dispatcher object, the object is used all over the app files
 var Dispatcher = require("flux").Dispatcher;
 
 module.exports = new Dispatcher();
