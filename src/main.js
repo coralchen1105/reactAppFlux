@@ -14,6 +14,8 @@ InitializeActions.initApp();
 
 ReactDom.render(
   <Router>
+    {/* path with "/" then get app.js from component folder as App is required from folder*/}
+    {/* browserRoute will only have one child element */}
     <Route path="/" component={App} />
   </Router>,
   document.getElementById("app")
